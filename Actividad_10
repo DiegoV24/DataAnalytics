@@ -1,0 +1,34 @@
+# Diego  Vargas
+# 215901462
+# 21/02/3
+
+
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import pandas as pd
+
+fichero = '/Users/vargas/Desktop/DATAsets/precios_coches.csv'
+
+datos = pd.read_csv(fichero)
+
+#print(datos)
+print(datos.head(5))
+print('*'*10)
+print(datos.tail(6))
+
+print(datos.columns)
+
+titulos_cabecera= ['Indice','Nombre','Localizacion','Año','Kilometros recorridos','Combustible','Transmisión','Tipo prpietario','Kilometraje','motor','Potencia','Asientos','Precio']
+
+datos.columns=titulos_cabecera
+print(datos.head(5))
+print(datos.columns)
+
+#Exportar datos
+fichero = '/Users/vargas/Desktop/DATAsets/precios_cochesActualizado.csv'
+datos.to_csv(fichero)
